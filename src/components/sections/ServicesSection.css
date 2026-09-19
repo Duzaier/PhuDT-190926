@@ -1,0 +1,88 @@
+/* ==========================================================================
+   SERVICES SECTION STYLES — FIGMA 100% MATCH
+   ========================================================================== */
+
+.services-section {
+  padding: 90px 0 110px 0;
+  background-color: #F8F9FB;
+}
+
+.services__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Centered Header */
+.services__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.services__eyebrow {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4361EE;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.services__title {
+  font-family: var(--font-family-base);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1E1E1E;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* 3 Cards Grid */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .services-section {
+    padding: 70px 0 90px 0;
+  }
+
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .services__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 680px) {
+  .services-section {
+    padding: 50px 0 70px 0;
+  }
+
+  .services__container {
+    gap: 36px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services__title {
+    font-size: 26px;
+  }
+}

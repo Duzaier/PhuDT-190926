@@ -1,0 +1,174 @@
+/* ==========================================================================
+   FEATURED LISTINGS SECTION STYLES — FIGMA 100% MATCH
+   Right-bleed slider with completely hidden scrollbar
+   ========================================================================== */
+
+.featured-listings-section {
+  padding: 80px 0 110px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+}
+
+.featured-listings__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 44px;
+}
+
+/* Header & Filter Controls */
+.featured-listings__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.featured-listings__title-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 540px;
+}
+
+.featured-listings__eyebrow {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4361EE;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.featured-listings__title {
+  font-family: var(--font-family-base);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1E1E1E;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px 0;
+}
+
+.featured-listings__description {
+  font-family: var(--font-family-base);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #737887;
+  margin: 0;
+}
+
+/* Filters */
+.featured-listings__filters {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.featured-listings__filter-btn {
+  padding: 10px 32px;
+  border-radius: 9999px;
+  font-family: var(--font-family-base);
+  font-size: 15px;
+  font-weight: 500;
+  background: #ffffff;
+  color: #3A0CA3;
+  border: 1.5px solid rgba(67, 97, 238, 0.4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  outline: none;
+}
+
+.featured-listings__filter-btn:hover {
+  border-color: #3A0CA3;
+  color: #3A0CA3;
+  transform: translateY(-2px);
+}
+
+.featured-listings__filter-btn--active {
+  background: #3A0CA3;
+  color: #ffffff;
+  border-color: #3A0CA3;
+  box-shadow: 0 6px 18px rgba(58, 12, 163, 0.25);
+}
+
+.featured-listings__filter-btn--active:hover {
+  background: #2f0980;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Properties Slider — Bleeds to right edge, no bottom scrollbar
+   -------------------------------------------------------------------------- */
+.featured-listings__track-wrapper {
+  width: 100%;
+  padding-left: max(var(--page-gutter), calc((100vw - var(--container-max-width)) / 2 + var(--page-gutter)));
+  padding-right: var(--page-gutter);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar IE/Edge */
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Completely remove scrollbars across all webkit engines */
+.featured-listings__track-wrapper::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.featured-listings__track-wrapper--dragging {
+  cursor: grabbing;
+}
+
+.featured-listings__track {
+  display: flex;
+  gap: 32px;
+  width: max-content;
+  padding-right: 80px;
+}
+
+.featured-listings__card-item {
+  width: clamp(320px, calc((var(--container-max-width) - (2 * var(--page-gutter)) - 64px) / 3), 400px);
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .featured-listings__card-item {
+    width: clamp(290px, calc((100vw - (2 * var(--page-gutter)) - 48px) / 2.6), 360px);
+  }
+
+  .featured-listings__track {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-listings-section {
+    padding: 50px 0 70px 0;
+  }
+
+  .featured-listings__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .featured-listings__title {
+    font-size: 30px;
+  }
+
+  .featured-listings__card-item {
+    width: 82vw;
+    min-width: 260px;
+  }
+}

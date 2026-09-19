@@ -1,0 +1,188 @@
+/* ==========================================================================
+   OUR TEAM OF EXPERTS SECTION STYLES — FIGMA 100% MATCH
+   ========================================================================== */
+
+.team-section {
+  position: relative;
+  padding: 100px 0 110px 0;
+  background-color: #ffffff;
+}
+
+.team__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Header (Centered) */
+.team__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.team__eyebrow {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4361EE;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.team__title {
+  font-family: var(--font-family-base);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #1E1E1E;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Grid Layout */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  width: 100%;
+}
+
+/* Card Structure */
+.team__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.team__card:hover {
+  transform: translateY(-8px);
+}
+
+/* Image Wrapper with Asymmetrical Arched Corners */
+.team__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.38;
+  max-width: 255px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  background-color: #f5f7fb;
+  transition: box-shadow 0.35s ease;
+}
+
+.team__card:hover .team__image-wrapper {
+  box-shadow: 0 20px 42px rgba(67, 97, 238, 0.14);
+}
+
+/* Distinct Figma Arched Corner Shapes */
+.team__image-wrapper--arch-top-left {
+  border-radius: 95px 28px 28px 28px;
+}
+
+.team__image-wrapper--arch-top-right {
+  border-radius: 28px 95px 28px 28px;
+}
+
+.team__image-wrapper--arch-top-both {
+  border-radius: 95px 95px 28px 28px;
+}
+
+/* Image Styling & Zoom on Hover */
+.team__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.team__card:hover .team__image {
+  transform: scale(1.08);
+}
+
+/* Member Info */
+.team__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 4px;
+}
+
+.team__name {
+  font-family: var(--font-family-base);
+  font-size: 21px;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  transition: color 0.25s ease;
+}
+
+.team__card:hover .team__name {
+  color: #4361EE;
+}
+
+.team__role {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #4361EE;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .team-section {
+    padding: 70px 0 85px 0;
+  }
+
+  .team__title {
+    font-size: 32px;
+  }
+
+  .team__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px 24px;
+  }
+
+  .team__image-wrapper {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-section {
+    padding: 50px 0 65px 0;
+  }
+
+  .team__title {
+    font-size: 26px;
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .team__image-wrapper {
+    max-width: 240px;
+  }
+
+  .team__name {
+    font-size: 19px;
+  }
+}

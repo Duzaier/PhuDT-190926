@@ -1,0 +1,366 @@
+/* ==========================================================================
+   FOOTER COMPONENT (FIGMA 100% MATCH)
+   ========================================================================== */
+
+.footer {
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Upper Section with Lavender Background */
+.footer__main {
+  background-color: #ECEBFA;
+  padding: 70px 0 60px 0;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr 1.3fr;
+  gap: 40px 30px;
+  align-items: flex-start;
+}
+
+/* --------------------------------------------------------------------------
+   Column 1: Brand Info & Contacts
+   -------------------------------------------------------------------------- */
+.footer__col--brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footer__logo-img {
+  height: 38px;
+  width: auto;
+}
+
+.footer__address {
+  font-family: var(--font-family-base);
+  font-size: 15px;
+  font-weight: 500;
+  color: #2B2B2B;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer__contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 8px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer__contact-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.footer__contact-link {
+  font-family: var(--font-family-base);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #2B2B2B;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__contact-link:hover {
+  color: #3A0CA3;
+}
+
+/* --------------------------------------------------------------------------
+   Columns 2 & 3: Headings & Navigation Lists
+   -------------------------------------------------------------------------- */
+.footer__heading {
+  font-family: var(--font-family-base);
+  font-size: 18px;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin: 0 0 20px 0;
+  line-height: 1.3;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__nav-link {
+  font-family: var(--font-family-base);
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #2B2B2B;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer__nav-link:hover {
+  color: #3A0CA3;
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Column 4: Subscribe to Newsletter & Social Links
+   -------------------------------------------------------------------------- */
+.footer__col--subscribe {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__heading--subscribe {
+  margin-bottom: 16px;
+}
+
+.footer__newsletter-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  padding: 6px 6px 6px 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  max-width: 320px;
+  width: 100%;
+}
+
+.footer__newsletter-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  color: #1E1E1E;
+  outline: none;
+  padding: 6px 0;
+}
+
+.footer__newsletter-input::placeholder {
+  color: #9E9E9E;
+  font-weight: 400;
+}
+
+.footer__newsletter-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #3A0CA3;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer__newsletter-btn:hover {
+  background-color: #4361EE;
+  transform: scale(1.05);
+}
+
+.footer__social-section {
+  margin-top: 24px;
+}
+
+.footer__social-title {
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  font-weight: 700;
+  color: #1E1E1E;
+  margin: 0 0 12px 0;
+}
+
+.footer__social-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer__social-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Bar (Black/Dark Bar)
+   -------------------------------------------------------------------------- */
+.footer__bottom {
+  background-color: #0B090A;
+  padding: 22px 0;
+}
+
+.footer__bottom-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer__copyright {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  color: #8D8D8D;
+  margin: 0;
+}
+
+.footer__legal-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.footer__legal-link {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  color: #8D8D8D;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__legal-link:hover {
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints (Mobile 100% Figma Match)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .footer__grid {
+    grid-template-columns: 1.2fr 1fr 1fr 1.3fr;
+    gap: 30px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer__main {
+    padding: 50px 0 44px 0;
+  }
+
+  .footer__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .footer__col--brand {
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+
+  .footer__logo {
+    margin-bottom: 2px;
+  }
+
+  .footer__address {
+    text-align: center;
+    max-width: 260px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .footer__contact-list {
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer__contact-item {
+    justify-content: center;
+  }
+
+  /* Quick links and Discovery are omitted on mobile as in Figma */
+  .footer__col--nav {
+    display: none;
+  }
+
+  .footer__col--subscribe {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer__heading--subscribe {
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 16px;
+  }
+
+  .footer__newsletter-form {
+    margin: 0 auto;
+    max-width: 320px;
+    width: 100%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .footer__social-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .footer__social-title {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .footer__social-links {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer__bottom {
+    padding: 16px 0;
+  }
+
+  .footer__bottom-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    text-align: center;
+    font-size: 12.5px;
+  }
+
+  .footer__legal-links {
+    display: none;
+  }
+}

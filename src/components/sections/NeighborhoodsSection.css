@@ -1,0 +1,254 @@
+/* ==========================================================================
+   NEIGHBORHOOD PROPERTIES SECTION STYLES — FIGMA 100% MATCH
+   ========================================================================== */
+
+.neighborhoods-section {
+  position: relative;
+  padding: 90px 0 110px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* 3D Gradient Decorative Spheres — Exact Figma Match */
+.neighborhoods__sphere {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(circle at 45% 30%, #ffffff 0%, #d8e4ff 35%, #8faaff 75%, #597af4 100%);
+  box-shadow: 0 10px 28px rgba(67, 97, 238, 0.2);
+  transition: transform 0.4s ease;
+}
+
+.neighborhoods__sphere--top {
+  top: 38px;
+  left: 48%;
+  width: 50px;
+  height: 50px;
+  animation: floatSlowTop 6s ease-in-out infinite alternate;
+}
+
+.neighborhoods__sphere--bottom {
+  bottom: 25px;
+  right: 19%;
+  width: 102px;
+  height: 102px;
+  animation: floatSlowBottom 7s ease-in-out infinite alternate;
+}
+
+@keyframes floatSlowTop {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes floatSlowBottom {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+.neighborhoods__container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Header */
+.neighborhoods__header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.neighborhoods__eyebrow {
+  font-family: var(--font-family-base);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4361EE;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.neighborhoods__title {
+  font-family: var(--font-family-base);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #1E1E1E;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Grid Layout */
+.neighborhoods__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.neighborhoods__row {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+/* Row 1: 3 cards (1 : 1 : 1.35) */
+.neighborhoods__row--top .neighborhoods__card--small {
+  flex: 1 1 29%;
+  height: 270px;
+}
+
+.neighborhoods__row--top .neighborhoods__card--medium {
+  flex: 1.35 1 42%;
+  height: 270px;
+}
+
+/* Row 2: 2 cards (1 : 1.4) */
+.neighborhoods__row--bottom .neighborhoods__card--medium {
+  flex: 1 1 42%;
+  height: 250px;
+}
+
+.neighborhoods__row--bottom .neighborhoods__card--large {
+  flex: 1.4 1 58%;
+  height: 250px;
+}
+
+/* Card Styling */
+.neighborhoods__card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 26px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s ease, border-color 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.neighborhoods__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.12);
+  border-color: #4361EE;
+}
+
+.neighborhoods__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.neighborhoods__card:hover .neighborhoods__image {
+  transform: scale(1.10);
+}
+
+/* Gradient Overlay */
+.neighborhoods__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0) 100%);
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+}
+
+.neighborhoods__card:hover .neighborhoods__overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.25) 55%, rgba(0, 0, 0, 0.05) 100%);
+}
+
+/* Info container bottom-left */
+.neighborhoods__info {
+  position: absolute;
+  bottom: 24px;
+  left: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #ffffff;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.neighborhoods__count {
+  font-family: var(--font-family-base);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.neighborhoods__location {
+  font-family: var(--font-family-base);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .neighborhoods-section {
+    padding: 70px 0 90px 0;
+  }
+
+  .neighborhoods__title {
+    font-size: 32px;
+  }
+
+  .neighborhoods__row--top,
+  .neighborhoods__row--bottom {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .neighborhoods__row--top .neighborhoods__card--small,
+  .neighborhoods__row--top .neighborhoods__card--medium,
+  .neighborhoods__row--bottom .neighborhoods__card--medium,
+  .neighborhoods__row--bottom .neighborhoods__card--large {
+    flex: 1 1 calc(50% - 10px);
+    height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .neighborhoods-section {
+    padding: 50px 0 70px 0;
+  }
+
+  .neighborhoods__title {
+    font-size: 26px;
+  }
+
+  .neighborhoods__row--top .neighborhoods__card--small,
+  .neighborhoods__row--top .neighborhoods__card--medium,
+  .neighborhoods__row--bottom .neighborhoods__card--medium,
+  .neighborhoods__row--bottom .neighborhoods__card--large {
+    flex: 1 1 100%;
+    height: 200px;
+  }
+
+  .neighborhoods__count {
+    font-size: 26px;
+  }
+
+  .neighborhoods__location {
+    font-size: 13.5px;
+  }
+}

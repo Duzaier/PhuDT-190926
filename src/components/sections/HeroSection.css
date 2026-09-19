@@ -1,0 +1,337 @@
+/* ==========================================================================
+   HERO SECTION STYLES — FIGMA 100% REZILLA MATCH
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* Decorative Organic Curved Background (Figma Rectangle 4: 1440px x 902px, border-radius: 0 0 800px 800px) */
+.hero__curved-bg {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  max-width: 1440px;
+  height: 900px;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F6FE 25%, #DCE9FC 65%, #C2DCFA 100%);
+  border-radius: 0 0 800px 800px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Decorative Ambient Gradient Spheres */
+.hero__sphere {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* 1. Top-Right Circle near bedroom slider (Figma Ellipse 9: 60px x 60px, -30deg) */
+.hero__sphere--top-right {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(150deg, #4361EE 0%, rgba(255, 255, 255, 0.1) 100%);
+  top: 360px;
+  left: 48%;
+  transform: rotate(-30deg);
+  box-shadow: 0 6px 20px rgba(67, 97, 238, 0.2);
+}
+
+/* 2. Bottom-Left Circle above Google logo (Figma Ellipse 12: 100px x 100px, 30deg, opacity 50%) */
+.hero__sphere--bottom-left {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(210deg, #4361EE 0%, #FFFFFF 100%);
+  bottom: 10px;
+  left: max(5%, calc(50% - 580px));
+  opacity: 0.6;
+  transform: rotate(30deg);
+  box-shadow: 0 8px 24px rgba(67, 97, 238, 0.15);
+}
+
+.hero__container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Main Hero Grid — Balanced 540px Left vs 440px Right */
+.hero__main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 540px) minmax(0, 440px);
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 48px;
+  margin-bottom: 40px;
+}
+
+/* Left Column */
+.hero__left-column {
+  display: flex;
+  flex-direction: column;
+  max-width: 540px;
+  width: 100%;
+}
+
+.hero__eyebrow {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4361EE;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.hero__title {
+  font-size: clamp(2.3rem, 3.6vw, 48px);
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 12px 0;
+}
+
+.hero__description {
+  font-size: 15px;
+  color: #6B7280;
+  line-height: 1.55;
+  max-width: 480px;
+  margin: 0 0 20px 0;
+}
+
+/* Bedroom Image Slider */
+.hero__slider-container {
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.hero__image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+}
+
+.hero__slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+/* Left & Right Circular Arrow Buttons */
+.hero__nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1E1E1E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  transition: all var(--transition-fast);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.hero__nav-arrow:hover {
+  background-color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hero__nav-arrow--prev {
+  left: -18px;
+}
+
+.hero__nav-arrow--next {
+  right: -18px;
+}
+
+/* 4 Line Bar Indicators */
+.hero__bars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.hero__bar {
+  height: 4px;
+  width: 72px;
+  border-radius: 9999px;
+  background-color: rgba(67, 97, 238, 0.15);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.hero__bar--active {
+  background-color: #4361EE;
+}
+
+/* Right Column: Vertical Search Card */
+.hero__right-column {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+/* Floating Proof Row */
+.hero__proof-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+.hero__proof-pill {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  border-radius: 9999px;
+  padding: 12px 28px 12px 18px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+
+/* Avatar Stack */
+.hero__avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.hero__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid #ffffff;
+  margin-left: -10px;
+}
+
+.hero__avatar:first-child {
+  margin-left: 0;
+}
+
+.hero__avatar-plus {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid #ffffff;
+  margin-left: -10px;
+}
+
+/* House Thumb */
+.hero__proof-thumb-wrapper {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero__proof-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Proof Text */
+.hero__proof-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__proof-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
+}
+
+.hero__proof-subtitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1023px) {
+  .hero-section {
+    padding-top: 24px;
+    padding-bottom: 60px;
+  }
+
+  .hero__main-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero__slider-container {
+    max-width: 100%;
+  }
+
+  .hero__right-column {
+    justify-content: center;
+  }
+
+  .hero__sphere--top-right {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero__proof-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .hero__proof-pill {
+    justify-content: flex-start;
+  }
+
+  .hero__nav-arrow--prev {
+    left: 8px;
+  }
+
+  .hero__nav-arrow--next {
+    right: 8px;
+  }
+
+  .hero__bar {
+    width: 48px;
+  }
+}

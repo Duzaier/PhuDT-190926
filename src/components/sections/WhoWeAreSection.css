@@ -1,0 +1,383 @@
+/* ==========================================================================
+   WHO WE ARE / ABOUT SECTION STYLES
+   Pixel-perfect Figma match with rotating circular SVG badge & exact sizing
+   ========================================================================== */
+
+.who-we-are-section {
+  position: relative;
+  padding: 70px 0 90px 0;
+  background-color: #ffffff;
+  overflow: visible;
+}
+
+/* Ambient gradient background blurs */
+.who-we-are__glow {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.55;
+  z-index: 0;
+}
+
+.who-we-are__glow--top-left {
+  top: -30px;
+  left: -50px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(160, 185, 255, 0.45) 0%, rgba(67, 97, 238, 0) 70%);
+}
+
+.who-we-are__glow--bottom-right {
+  bottom: 0px;
+  right: 140px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(110, 140, 255, 0.55) 0%, rgba(67, 97, 238, 0) 70%);
+}
+
+.who-we-are__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   Left Column: Content & Cards
+   -------------------------------------------------------------------------- */
+.who-we-are__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 480px;
+}
+
+.who-we-are__badge-tag {
+  font-family: var(--font-family-base);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #4361EE;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.who-we-are__title {
+  font-family: var(--font-family-base);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.22;
+  color: #1E1E1E;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
+}
+
+.who-we-are__description {
+  font-family: var(--font-family-base);
+  font-size: 14px;
+  line-height: 1.6;
+  color: #737887;
+  margin: 0 0 30px 0;
+}
+
+/* Feature Cards List */
+.who-we-are__features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+.who-we-are__card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 22px;
+  max-width: 370px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(230, 235, 245, 0.85);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.who-we-are__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(67, 97, 238, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
+  border-color: rgba(67, 97, 238, 0.3);
+}
+
+.who-we-are__card-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.who-we-are__card:hover .who-we-are__card-icon-wrapper {
+  transform: scale(1.08);
+}
+
+.who-we-are__card-icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+.who-we-are__card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.who-we-are__card-title {
+  font-family: var(--font-family-base);
+  font-size: 15px;
+  font-weight: 600;
+  color: #4361EE;
+  margin: 0;
+}
+
+.who-we-are__card-desc {
+  font-family: var(--font-family-base);
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: #737887;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Right Column: Asymmetrical Gallery & Rotating Circular Text Badge
+   -------------------------------------------------------------------------- */
+.who-we-are__gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: 245px 255px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 0 10px 0;
+}
+
+.who-we-are__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.who-we-are__image-wrapper:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+.who-we-are__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.who-we-are__image-wrapper:hover .who-we-are__image {
+  transform: scale(1.08);
+}
+
+/* Left tall villa image — Offset downwards */
+.who-we-are__image-wrapper--tall {
+  height: 440px;
+  width: 245px;
+  border-radius: 30px;
+  margin-top: 46px;
+}
+
+/* Right column with 2 stacked images */
+.who-we-are__stacked-images {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 255px;
+}
+
+.who-we-are__image-wrapper--bedroom {
+  height: 240px;
+  width: 255px;
+  border-radius: 30px;
+}
+
+.who-we-are__image-wrapper--living {
+  height: 185px;
+  width: 255px;
+  border-radius: 30px;
+}
+
+/* --------------------------------------------------------------------------
+   Circular Rotating Text Badge
+   -------------------------------------------------------------------------- */
+.who-we-are__rotating-badge {
+  position: absolute;
+  top: -12px;
+  left: 158px;
+  width: 175px;
+  height: 175px;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.who-we-are__rotating-svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateCircle 16s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.who-we-are__rotating-badge:hover .who-we-are__rotating-svg {
+  animation-duration: 8s; /* Smooth acceleration on hover */
+}
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.who-we-are__rotating-text {
+  fill: #4361EE;
+  font-family: var(--font-family-base);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .who-we-are-section {
+    padding: 60px 0 80px 0;
+  }
+
+  .who-we-are__container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .who-we-are__content {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .who-we-are__title {
+    font-size: 32px;
+  }
+
+  .who-we-are__card {
+    max-width: 440px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .who-we-are__gallery {
+    grid-template-columns: 220px 230px;
+    margin: 0 auto;
+  }
+
+  .who-we-are__image-wrapper--tall {
+    height: 380px;
+    width: 220px;
+    margin-top: 36px;
+  }
+
+  .who-we-are__stacked-images {
+    width: 230px;
+  }
+
+  .who-we-are__image-wrapper--bedroom {
+    height: 200px;
+    width: 230px;
+  }
+
+  .who-we-are__image-wrapper--living {
+    height: 160px;
+    width: 230px;
+  }
+
+  .who-we-are__rotating-badge {
+    left: 130px;
+    top: -15px;
+    width: 155px;
+    height: 155px;
+  }
+}
+
+@media (max-width: 640px) {
+  .who-we-are-section {
+    padding: 44px 0 60px 0;
+  }
+
+  .who-we-are__title {
+    font-size: 26px;
+  }
+
+  .who-we-are__gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .who-we-are__image-wrapper--tall {
+    height: 280px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .who-we-are__stacked-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .who-we-are__image-wrapper--bedroom,
+  .who-we-are__image-wrapper--living {
+    height: 160px;
+    width: 100%;
+  }
+
+  .who-we-are__rotating-badge {
+    left: auto;
+    right: 8px;
+    top: -24px;
+    width: 130px;
+    height: 130px;
+  }
+
+  .who-we-are__rotating-text {
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-we-are__rotating-svg {
+    animation: none;
+  }
+}
